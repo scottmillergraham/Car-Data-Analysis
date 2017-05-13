@@ -1,0 +1,24 @@
+def SumIf(sumList, sumColumn, conditionalList = [{'Column': None, 'Value': None}]):
+    result = 0
+    
+    #http://stackoverflow.com/questions/750298/easy-way-to-check-that-a-variable-is-defined-in-python
+    try:
+        print myObject.myVar
+    except NameError:
+        print "not defined"
+    
+    if not isDefined(connditionalList):
+        for item in sumList:
+            result += item[sumColumn]
+    
+    elif isDefined(conditionalList):
+        for item in sumList:
+            sumBool = True
+            for conditional in conditionalList:
+                if item[conditional['column']] == conditional['Value']:
+                    sumBool = False
+                    break
+            if sumBool:
+                result += item['sumColumn']
+        
+    return result
